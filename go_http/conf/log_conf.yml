@@ -1,0 +1,2 @@
+event_log_file_name: logs/event_logback/log.log
+trace_log_file_name: logs/trace_logback/log.log
