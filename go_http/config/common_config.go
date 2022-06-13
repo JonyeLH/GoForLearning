@@ -1,18 +1,21 @@
 package config
 
 import (
-	"encoding/json"
+	"fmt"
+	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"log"
 )
+
 var BathPath string
 
-func InitConfigs(){
+func InitConfigs() {
 	BathPath = "conf/"
 }
 
-func initConf(path string, config interface{}) error{
+func initConf(path string, config interface{}) error {
 	content, err := ioutil.ReadFile(path)
+	fmt.Println(string(content))
 	defer func() {
 		if err != nil {
 			log.Fatalf("%v", err.Error())
@@ -21,7 +24,7 @@ func initConf(path string, config interface{}) error{
 	if err != nil {
 		return err
 	}
-	err = json.Unmarshal(content, config)
+	err = yaml.Unmarshal(content, config)
 	if err != nil {
 		return err
 	}

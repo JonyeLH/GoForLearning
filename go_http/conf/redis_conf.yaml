@@ -1,0 +1,9 @@
+#系统的启动端口
+connect_type: sentinel
+sentinel_master_name: master6301
+conn: AcsdRedis01Host:26301;AcsdRedis02Host:26301;AcsdRedis03Host:26301
+password: cY0_Omr0Vhds
+max_idle: 200
+#默认的db 存放引擎相关信息
+default_db_num: 6
+redis_list_key: cs_engine_msg_list_dev
