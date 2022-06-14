@@ -1,0 +1,11 @@
+#mysql 配置文件
+username: root
+password:
+network: tcp
+server:
+port:     3306
+database:
+max_conn:    100
+max_ide_conn:  50
+
+

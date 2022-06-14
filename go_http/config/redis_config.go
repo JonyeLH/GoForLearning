@@ -11,5 +11,7 @@ type RedisConfig struct {
 }
 
 func InitRedis() {
+	var redis RedisConfig
+	_ = initConf(BathPath+"redis_conf.yml", &redis)
 
 }
