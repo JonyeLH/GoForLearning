@@ -1,4 +1,4 @@
-package my
+package main
 
 import (
 	. "github.com/smartystreets/goconvey/convey"
@@ -24,9 +24,9 @@ func TestStructFunc(t *testing.T) {
 	//调用结构函数1
 	idOut, nameOut := ts.StructFunc(idIn, nameIn)
 
-	if idOut==idIn&&nameOut==nameIn{
+	if idOut == idIn && nameOut == nameIn {
 		t.Log("测试通过！")
-	}else{
+	} else {
 		t.Error("函数执行错误")
 	}
 
@@ -34,10 +34,9 @@ func TestStructFunc(t *testing.T) {
 
 /*
 goconvey使用基本的方法
- */
+*/
 func TestAdd(t *testing.T) {
 	Convey("测试add方法", t, func() {
 		So(Add(2, 3), ShouldEqual, 5)
 	})
 }
-
