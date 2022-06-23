@@ -80,6 +80,17 @@ service mysql restart
 
 /usr/local/mysql/bin/mysql -u root -p 
 
+9)远程连接mysql
+
+按照MySQL8.0前后版本，不同方法刷远程连接权限：
+
+8.0之前版本：
+
+
+8.0之后版本：
+
+注意：若MySQL部署在云服务上，要在防火墙添加规则。将MySQL端口添加即可。
+
 ### 二、基本语法
 1、创建数据库：
 
@@ -177,11 +188,21 @@ rename table MyClass to YouClass;
 
 ## MySQL进阶学习
 
-### 一、日志系统
+### 一、常用函数
+- 查询两个日期之间的**天数**
+    
+    DATEDIFF(date1, date2)
+ 
+    select DATEDIFF('2008-12-30','2008-12-29') AS DiffDate    #返回结果赋给DiffDate
+
+    DateDiff(NOW(),start_time)=0 #可以视为当天
+
+
+### 二、日志系统
 
 
 
-### 二、事务隔离
+### 三、事务隔离
 
 
 

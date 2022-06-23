@@ -36,12 +36,20 @@ func InitMysql() {
 参考链接：https://gorm.io/zh_CN/docs/connecting_to_the_database.html
 */
 func NewMysql(mysqlSelf MysqlConfig) (*gorm.DB, error) {
-	dsn := fmt.Sprintf("%s:%s@%s(%s:%s)%s?charset=utf8mb4&parseTime=True&loc=Local", mysqlSelf.UserName, mysqlSelf.Password,
+	dsn := fmt.Sprintf("%s:%s@%s(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", mysqlSelf.UserName, mysqlSelf.Password,
 		mysqlSelf.NetWork, mysqlSelf.Server, mysqlSelf.Port, mysqlSelf.DataBase)
 	dbCon, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		log.Printf("mysql 初始化失败", err.Error())
 		return nil, err
 	}
+	sql_db, err := dbCon.DB()
+	if err != nil {
+		log.Printf("mysql 初始化失败", err.Error())
+		return nil, err
+	}
+	sql_db.SetMaxIdleConns(mysqlSelf.MaxConn) //最大连接数
+	sql_db.SetMaxIdleConns(mysqlSelf.MaxIdeConn)
+	sql_db.SetConnMaxLifetime(60) //最大生存时间(s)
 	return dbCon, nil
 }

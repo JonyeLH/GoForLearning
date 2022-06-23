@@ -1,0 +1,8 @@
+#系统的启动端口
+http_port: 9088
+#grpc的启动端口
+#grpc_port: 1234
+# jwt配置
+secret_key: iflytek2022
+# jwt超时时间，分钟
+expires_time: 120

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	. "github.com/smartystreets/goconvey/convey"
 	"testing"
 )
@@ -39,4 +40,17 @@ func TestAdd(t *testing.T) {
 	Convey("测试add方法", t, func() {
 		So(Add(2, 3), ShouldEqual, 5)
 	})
+}
+
+//Json Decoder 使用方法
+func TestDecoder(t *testing.T) {
+	Decoder()
+	fmt.Println("完成调用")
+}
+
+//find file path
+func TestFind(t *testing.T) {
+	//FindFile()
+	FindAllFile()
+	fmt.Println("查找的文件")
 }
