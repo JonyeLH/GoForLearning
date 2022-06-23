@@ -24,9 +24,8 @@ func Init() {
 	config.InitSystem()
 
 	router.HttpServerStart()
-
 }
 
 func UnInit() {
-
+	router.HttpServerStop()
 }

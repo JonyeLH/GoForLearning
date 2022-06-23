@@ -12,7 +12,8 @@ type Filter handlerFunc
 type handlerFunc func(ctx *Context)
 
 var _ FilterBuilder = MetricsFilterBuilder
-func MetricsFilterBuilder(next Filter) Filter{
+
+func MetricsFilterBuilder(next Filter) Filter {
 	return func(ctx *Context) {
 		start := time.Now().Nanosecond()
 		next(ctx)
