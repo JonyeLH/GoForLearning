@@ -7,7 +7,7 @@ import (
 	"go_http/config"
 	"go_http/controller"
 	"go_http/logs"
-	"go_http/proxy"
+	"go_middleware/proxy"
 	"log"
 	"net/http"
 	"time"
