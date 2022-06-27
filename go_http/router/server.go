@@ -1,13 +1,13 @@
 package router
 
 import (
+	"MyGo_middleware/common/config"
+	"MyGo_middleware/logs"
+	"MyGo_middleware/proxy"
 	"context"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"go_http/config"
 	"go_http/controller"
-	"go_http/logs"
-	"go_middleware/proxy"
 	"log"
 	"net/http"
 	"time"
@@ -18,7 +18,7 @@ var server *http.Server
 func router(ginRouter *gin.Engine) {
 	Group := ginRouter.Group("/")
 	Group.Handle(http.MethodPost, "/log_test", controller.HttpBase.LogTest)
-
+	Group.Handle(http.MethodPost, "/mysql_test", controller.HttpBase.MysqlTest)
 }
 
 func HttpServerStart() {
@@ -26,7 +26,7 @@ func HttpServerStart() {
 	router(ginRouter)
 
 	server = &http.Server{
-		Addr:    fmt.Sprintf(config.System.HttpPort),
+		Addr:    fmt.Sprintf(":%s", config.System.HttpPort),
 		Handler: ginRouter,
 	}
 

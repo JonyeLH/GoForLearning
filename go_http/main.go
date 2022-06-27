@@ -1,7 +1,7 @@
 package main
 
 import (
-	"go_http/config"
+	config2 "MyGo_middleware/common/config"
 	"go_http/router"
 	"os"
 	"os/signal"
@@ -17,11 +17,11 @@ func main() {
 }
 
 func Init() {
-	config.InitConfigs()
-	config.InitLog()
-	config.InitMysql()
-	config.InitRedis()
-	config.InitSystem()
+	config2.InitConfigs()
+	config2.InitLog()
+	config2.InitMysql()
+	//config2.InitRedis()
+	config2.InitSystem()
 
 	router.HttpServerStart()
 }
