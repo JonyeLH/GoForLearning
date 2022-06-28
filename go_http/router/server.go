@@ -18,6 +18,7 @@ var server *http.Server
 func router(ginRouter *gin.Engine) {
 	Group := ginRouter.Group("/")
 	Group.Handle(http.MethodPost, "/log_test", controller.HttpBase.LogTest)
+	fmt.Println("log_test interface ")
 	Group.Handle(http.MethodPost, "/mysql_test", controller.HttpBase.MysqlTest)
 }
 
