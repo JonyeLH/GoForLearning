@@ -28,9 +28,9 @@ func CompressedFile(file *os.File, prefix string, zw *zip.Writer) error {
 }
 
 func TestCompress() {
-	f, _ := os.Open("test.txt")
+	f, _ := os.Open("Unit_Test.txt")
 	// 压缩文件
-	dst, _ := os.Create("test.zip")
+	dst, _ := os.Create("Unit_Test.zip")
 	zipWriter := zip.NewWriter(dst)
 	if err := CompressedFile(f, "", zipWriter); err != nil {
 		log.Fatalln(err.Error())

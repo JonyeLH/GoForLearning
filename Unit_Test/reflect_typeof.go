@@ -3,10 +3,9 @@ package main
 import (
 	"fmt"
 	"reflect"
-	"testing"
 )
 
-func TestType(t *testing.T) {
+func main() {
 	var x int32 = 20
 	fmt.Println("type:", reflect.TypeOf(x))
 }
