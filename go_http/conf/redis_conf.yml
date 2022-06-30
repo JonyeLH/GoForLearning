@@ -6,4 +6,4 @@ password: 123
 max_idle: 200
 #默认的db 存放引擎相关信息
 default_db_num: 6
-redis_list_key: cs_engine_msg_list_dev
+redis_list_key: test_list

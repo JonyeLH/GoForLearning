@@ -28,26 +28,26 @@
 
 ### 2、redis.conf配置文件
 - vim redis.conf
-- 设定关键配置
+  - 设定关键配置
 
-    后台运行redis-server： daemonize no  修改为 yes
+      后台运行redis-server： daemonize no  修改为 yes
 
-    绑定host： 注释默认ip  ----  #bind 127.0.0.1
-              设定网卡host  ----  bind xxx.xx.xx.xx   （ifconfig查询网卡host）
+      绑定host： 注释默认ip  ----  #bind 127.0.0.1   注释表示任何ip都可连接到redis
+                设定网卡host  ----  bind xxx.xx.xx.xx   （ifconfig查询网卡host）
 
-    修改端口port：  port  6301   （vim redis.conf /port）
+      修改端口port：  port  6301   （vim redis.conf /port）
 
-- 生效修改
+  - 生效修改
 
-    停止原始redis-server进程: ps -ef |grep redis      kill -9 id
+      停止原始redis-server进程: ps -ef |grep redis      kill -9 id
 
-    重启redis-server：./redis-sever  ./redis.conf
+      重启redis-server：./redis-sever  ./redis.conf
 
-    重启redis-cli:  ./redis-cli -h ip -p port -a password
+      重启redis-cli:  ./redis-cli -h ip -p port -a password     #若没绑定ip   -h ip不用填写
   
-    客户端关闭：shutdown   
+      客户端关闭：shutdown   
 
-    退出redis：exit
+      退出redis：exit
 
 
 ### 3、安装后可执行文件说明
@@ -61,7 +61,7 @@
   
   redis-check-dump ： rdb 文件进行检查的工具
   
-  redis-sentinel ： 启动哨兵监控服务``
+  redis-sentinel ： 启动哨兵监控服务
 
 
 

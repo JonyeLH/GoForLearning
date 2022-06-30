@@ -185,17 +185,33 @@ rename table MyClass to YouClass;
 
 
 
-
+unit,datetime_expr1,datetime_expr2
 ## MySQL进阶学习
 
 ### 一、常用函数
+
 - 查询两个日期之间的**天数**
     
-    DATEDIFF(date1, date2)
+    DATEDIFF(date1, date2)    # 查询 (date2 - date1) 之间的天数
  
     select DATEDIFF('2008-12-30','2008-12-29') AS DiffDate    #返回结果赋给DiffDate
 
     DateDiff(NOW(),start_time)=0 #可以视为当天
+
+
+- 查询任意两个**时间差**
+  
+    TimeStampDiff(unit,datetime_expr1,datetime_expr2)       # 查询 (datetime_expr2 - datetime_expr1) 之间 时间单位为 **unit** 的时间差     unit 可为： MINUTE  DAY  MONTH  YEAR
+
+    SELECT TIMESTAMPDIFF(DAY,'2003-02-01','2003-05-01');   // 计算两个时间相隔多少天
+
+    SELECT TIMESTAMPDIFF(MONTH,'2003-02-01','2003-05-01');   // 计算两个时间相隔多少月
+
+    SELECT TIMESTAMPDIFF(YEAR,'2002-05-01','2001-01-01');    // 计算两个时间相隔多少年
+
+    SELECT TIMESTAMPDIFF(MINUTE,'2003-02-01','2003-05-01 12:05:55');  // 计算两个时间相隔多少分钟
+
+
 
 
 ### 二、日志系统

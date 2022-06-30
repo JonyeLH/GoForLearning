@@ -4,6 +4,6 @@ password: 123
 network: tcp
 server: 47.103.73.9
 port:     3306
-database: Unit_Test
+database: test
 max_conn:    100
 max_ide_conn:  50

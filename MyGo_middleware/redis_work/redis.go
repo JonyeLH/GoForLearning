@@ -9,6 +9,6 @@ var redisClient *redis.Client
 const ()
 
 func InitRedis() {
-	//redis.NewClient()
-	//redis.NewFailoverClient()
+	//Cache.NewClient()
+	//Cache.NewFailoverClient()
 }

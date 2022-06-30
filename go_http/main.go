@@ -20,7 +20,7 @@ func Init() {
 	config2.InitConfigs()
 	config2.InitLog()
 	config2.InitMysql()
-	//config2.InitRedis()
+	config2.InitRedis()
 	config2.InitSystem()
 
 	router.HttpServerStart()
