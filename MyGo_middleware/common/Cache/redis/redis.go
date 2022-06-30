@@ -3,6 +3,7 @@
 package redis
 
 import (
+	caches "MyGo_middleware/common/Cache"
 	"MyGo_middleware/logs"
 	"encoding/json"
 	"errors"

@@ -15,9 +15,9 @@
 package redis
 
 import (
+	caches "MyGo_middleware/common/Cache"
 	"fmt"
 	"github.com/gomodule/redigo/redis"
-	"iflytek.com/ebg/cs-base/caches"
 	"testing"
 	"time"
 )
